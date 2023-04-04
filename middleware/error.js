@@ -12,6 +12,7 @@ class ErrorHandler extends Error {
     return res.status(err.statusCode).json({
       success: false,
       message: err.message,
+      Error :err
     });
   };
   

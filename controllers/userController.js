@@ -19,6 +19,7 @@ export const login = async (req, res, next) => {
     sendCookie(user, res, `Welcome back, ${user.name}`, 200);
   } catch (error) {
     next(error);
+    res.json({Error : error})
   }
 };
 
@@ -36,7 +37,7 @@ export const register = async (req, res) => {
 
     sendCookie(user, res, "Registered Successfully", 201);
   } catch (error) {
-    res.status(404).json({ error: error.message });
+    res.status(404).json({Error : error})
   }
 };
 
