@@ -44,11 +44,11 @@ export const updateTask = async (req, res, next) => {
         $set: {
           title: req.body.title,
           description: req.body.description,
-          completed: req.body.completed,
+          isCompleted: req.body.isCompleted,
         },
       },
       { new: true });
-    res.status(200).json({ success: true, updatedTAsk: updatedTask })
+    res.status(200).json({ success: true, message: "Updated Task Successfully", updatedTAsk: updatedTask })
   } catch (error) {
     next(error);
   }
